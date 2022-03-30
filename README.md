@@ -1,4 +1,4 @@
-#百度智能云 敏感字检测
+# 百度智能云 敏感字检测
 
 https://cloud.baidu.com/doc/ANTIPORN/s/Rk3h6xb3i
 ### config
