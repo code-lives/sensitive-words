@@ -25,3 +25,10 @@ echo $token['access_token'];die;
 $data = \Baidu\Sensitive\Words::getInstance()->config($config)->ckContent($token, "文本内容");
 
 ```
+
+### 检测图片
+
+```
+$data = \Baidu\Sensitive\Words::getInstance()->config($config)->ckContent($token, $image);
+
+```
