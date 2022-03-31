@@ -12,6 +12,8 @@ class Words
 
     protected $urlSend = 'https://aip.baidubce.com/rest/2.0/solution/v1/text_censor/v2/user_defined?access_token=';
 
+    protected $imaSend = 'https://aip.baidubce.com/rest/2.0/solution/v1/img_censor/v2/user_defined?access_token=';
+
     protected $urlToken = 'https://aip.baidubce.com/oauth/2.0/token';
 
     public static function getInstance()
@@ -40,20 +42,23 @@ class Words
         ];
         $result = json_decode($this->post($this->urlToken, $data), true);
         if (isset($result['error'])) {
-            throw new Exception($result['error_description']);
+            throw new \Exception($result['error_description']);
         }
         return $result;
     }
 
     public function ckContent($token, $content)
     {
-
         $result = json_decode($this->curl_post($this->urlSend . $token, ['text' => $content]), true);
-
+        return $result;
+    }
+    public function ckImage($token, $image)
+    {
+        $result = json_decode($this->curl_post($this->imaSend . $token, ['image' => base64_encode(file_get_contents($image))]), true);
         return $result;
     }
     /**
-     * @desc post 用于退款
+     * @desc post 
      */
     protected static function curl_post($url, $data)
     {
