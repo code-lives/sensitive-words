@@ -29,6 +29,6 @@ $data = \Baidu\Sensitive\Words::getInstance()->config($config)->ckContent($token
 ### 检测图片
 
 ```
-$data = \Baidu\Sensitive\Words::getInstance()->config($config)->ckContent($token, $image);
+$data = \Baidu\Sensitive\Words::getInstance()->config($config)->ckImage($token, $image);
 
 ```
