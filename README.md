@@ -13,7 +13,7 @@ https://cloud.baidu.com/doc/ANTIPORN/s/Rk3h6xb3i
 
 ```
 
-$token = \Demo\test\Test::getInstance()->config($config)->getToken();
+$token = \Baidu\Sensitive\Words::getInstance()->config($config)->getToken();
 
 echo $token['access_token'];die;
 
